@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-bg: rgb(216, 213, 255);
+  --subBtn-bg: linear-gradient(
+    135deg,
+    rgb(182, 177, 255),
+    rgb(103, 93, 254),
+    rgb(62, 48, 255)
+  );
+  --box-shadow: 2px 2px 15px 1px rgba(62, 48, 255, 0.2);
+  --box-bg: rgba(103, 93, 254, 0.7);
+  --overlay--Bg: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.516),
+    rgba(188, 183, 255, 0.516),
+    rgba(124, 116, 244, 0.516),
+    rgba(116, 107, 241, 0.516)
+  );
+}
+
+body {
+  padding: 10px;
+  background: var(--main-bg);
+}
+.container {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.hidden {
+  opacity: 0;
+}
+.input--container {
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(20px);
+}
+.add-contact {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  z-index: 5;
+}
+.form-container {
+  margin: auto;
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 98%;
+  height: 96vh;
+}
+.form--box {
+  display: flex;
+  flex-direction: column;
+}
+.add:hover,
+.add:visited {
+  scale: 1.05;
+}
+input,
+button {
+  width: 200px;
+  height: 40px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+input {
+  padding-left: 20px;
+  border: 2px solid rgb(182, 177, 255);
+}
+button {
+  background: var(--subBtn-bg);
+  border: none;
+  color: #fff;
+}
+button:hover,
+button:visited,
+input:hover,
+input:visited {
+  box-shadow: var(--box-shadow);
+}
+.contact-block {
+  background: var(--box-bg);
+  padding: 20px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  line-height: 25px;
+  box-shadow: var(--box-shadow);
+  flex: 0 1 auto;
+}
+.contact--box {
+  width: 100%;
+  align-content: flex-start;
+  flex-direction: row;
+  padding: 15px;
+  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: visible;
+}
+.label {
+  position: absolute;
+  margin: 5px auto;
+  width: 98%;
+  text-align: center;
+  font-size: 30px;
+  color: rgb(62, 48, 255);
+  font-family: fantasy;
+  letter-spacing: 10px;
+  font-weight: 600;
+}
+.O {
+  font-size: 50px;
+}
+.contact-container {
+  margin-top: 70px;
+}
+.overlay {
+  background: var(--overlay--Bg);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+}
+.displayNone {
+  display: none;
+}
+pre {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+  color: rgb(7, 0, 99);
+}
+.delete-box {
+  float: right;
+  margin-top: 5px;
+}
+.delete-box:hover {
+  scale: 1.08;
+}
+.close {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  width: 20px;
+  z-index: 5;
+}
+.close:hover {
+  scale: 1.5;
+}

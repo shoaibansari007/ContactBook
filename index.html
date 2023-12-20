@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container overlay displayNone">
+        <img class="close" src="img/xmark-solid.svg" alt="close" />
+        <form class="form--box">
+          <input
+            class="input input-name"
+            type="text"
+            placeholder="Contact Name"
+          />
+          <input
+            class="input input-tel"
+            type="number"
+            placeholder="Contact Number"
+            min="10"
+            max="15"
+          />
+          <input
+            class="input input-email"
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            type="email"
+            placeholder="Email"
+          />
+          <button class="submit">Submit</button>
+        </form>
+      </div>
+      <div class="label">
+        CONTACT B<span class="O">O</span><span class="O">O</span>K
+        <div class="add-contact">
+          <div class="add">
+            <img
+              src="img/add.png"
+              alt="Add"
+              width="50px"
+              style="outline: none; border: none"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="contact-container">
+        <div class="contact--box hidden">
+          <!-- <p>Name : <span class="name"></span></p>
+          <p>Tel : <span class="tel"></span></p>
+          <p>Email : <span class="email"></span></p> -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
