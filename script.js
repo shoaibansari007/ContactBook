@@ -58,7 +58,7 @@ submitBtn.addEventListener("click", function (e) {
     btn.addEventListener("click", function () {
       const btnBox = btn.closest(".contact-block");
       contacts.splice(i, 1);
-      btnBox.classList.add("hidden");
+      btnBox.classList.add("displayNone");
     })
   );
 });
