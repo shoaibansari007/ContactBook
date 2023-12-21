@@ -164,7 +164,7 @@ pre {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 500px) {
   .headline {
     width: min-content;
     margin: 0 auto;
