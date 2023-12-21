@@ -115,7 +115,7 @@ input:visited {
   text-align: center;
   font-size: 30px;
   color: rgb(62, 48, 255);
-  font-family: fantasy;
+  font-family: "Ysabeau Infant";
   letter-spacing: 10px;
   font-weight: 600;
 }
@@ -155,4 +155,39 @@ pre {
 }
 .close:hover {
   scale: 1.5;
+}
+.background-img {
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 430px) {
+  .headline {
+    width: min-content;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .contact-block {
+    flex-basis: 300px;
+    margin: 0 auto;
+  }
+  .contact-container {
+    padding-top: 20px;
+  }
+  .background-img {
+    width: 80%;
+    margin: auto;
+    margin-top: 20%;
+  }
+  .contact-container {
+    height: 80vh;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .background-img {
+    width: 30%;
+  }
 }

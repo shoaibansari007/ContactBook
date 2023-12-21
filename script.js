@@ -8,6 +8,7 @@ const inputEmail = document.querySelector(".input-email");
 const contactBox = document.querySelector(".contact--box");
 const formBox = document.querySelector(".form-container");
 const closeOverlay = document.querySelector(".close");
+const bgImg = document.querySelector(".background-img");
 
 // Contact Update Function
 // const displayContact = function () {};
@@ -17,7 +18,9 @@ const closeForm = function () {
   formBox.classList.add("displayNone");
   addBtn.style.opacity = 1;
 };
-
+const displayBg = function () {
+  if (contacts.length < 0) bgImg.classList.remove("displayNone");
+};
 // Add Contact ------------------------------->
 addBtn.addEventListener("click", function (e) {
   e.preventDefault();
@@ -26,7 +29,7 @@ addBtn.addEventListener("click", function (e) {
   inputName.value = inputTel.value = inputEmail.value = "";
 });
 const contacts = [];
-
+displayBg();
 // Submit Form------------------------------->
 submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
@@ -46,6 +49,7 @@ submitBtn.addEventListener("click", function (e) {
   if (nameValue && telValue && emailValue && emailValue.includes("@" && ".")) {
     formBox.classList.add("displayNone");
     contactBox.classList.remove("hidden");
+    bgImg.classList.add("displayNone");
     contactBox.style.zIndex = 5;
     addBtn.style.opacity = 1;
     contactBox.insertAdjacentHTML("afterbegin", html);
@@ -61,8 +65,8 @@ submitBtn.addEventListener("click", function (e) {
       btnBox.classList.add("displayNone");
     })
   );
+  displayBg();
 });
-
 // Close Form------------------------------->
 closeOverlay.addEventListener("click", function (e) {
   e.preventDefault();
