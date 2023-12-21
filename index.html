@@ -25,19 +25,19 @@
             class="input input-name"
             type="text"
             placeholder="Contact Name"
+            oninput="changeBtnColor()"
           />
           <input
             class="input input-tel"
             type="number"
             placeholder="Contact Number"
-            min="10"
-            max="15"
+            oninput="changeBtnColor()"
           />
           <input
             class="input input-email"
-            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
             type="email"
             placeholder="Email"
+            oninput="changeBtnColor()"
           />
           <button class="submit">Submit</button>
         </form>

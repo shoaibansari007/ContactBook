@@ -11,12 +11,11 @@ const closeOverlay = document.querySelector(".close");
 const bgImg = document.querySelector(".background-img");
 
 // Contact Update Function
-// const displayContact = function () {};
 
 // Close Form  Funtion
 const closeForm = function () {
   formBox.classList.add("displayNone");
-  addBtn.style.opacity = 1;
+  addBtn.style.display = "block";
 };
 const displayBg = function () {
   if (contacts.length < 0) bgImg.classList.remove("displayNone");
@@ -25,11 +24,12 @@ const displayBg = function () {
 addBtn.addEventListener("click", function (e) {
   e.preventDefault();
   formBox.classList.remove("displayNone");
-  addBtn.style.opacity = 0;
+  addBtn.style.display = "none";
   inputName.value = inputTel.value = inputEmail.value = "";
 });
 const contacts = [];
 displayBg();
+
 // Submit Form------------------------------->
 submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
@@ -46,17 +46,23 @@ submitBtn.addEventListener("click", function (e) {
   <div><img class="delete-box" src="img/trash-solid.svg" alt="Delete"></div>
   </div>
   `;
-  if (nameValue && telValue && emailValue && emailValue.includes("@" && ".")) {
+  if (
+    nameValue &&
+    telValue &&
+    emailValue &&
+    emailValue.includes("@" && ".") &&
+    telValue.length > 10 &&
+    telValue.length < 15
+  ) {
     formBox.classList.add("displayNone");
     contactBox.classList.remove("hidden");
     bgImg.classList.add("displayNone");
     contactBox.style.zIndex = 5;
-    addBtn.style.opacity = 1;
+    addBtn.style.display = "block";
     contactBox.insertAdjacentHTML("afterbegin", html);
     console.log("success");
   } else console.log("Invalid Input");
   contacts.push(html);
-
   const dltBtn = document.querySelectorAll(".delete-box");
   dltBtn.forEach((btn, i) =>
     btn.addEventListener("click", function () {
@@ -76,3 +82,27 @@ document.addEventListener("keydown", function (event) {
   if (event.key === "Escape" && !formBox.classList.contains("displayNone"))
     closeForm();
 });
+
+const changeBtnColor = () => {
+  if (
+    inputName.value &&
+    inputEmail.value &&
+    inputEmail.value.includes("@" && ".") &&
+    inputTel.value?.length >= 10 &&
+    inputTel.value.length < 15
+  ) {
+    submitBtn.style.background = `linear-gradient(
+      135deg,
+      rgb(182, 177, 255),
+      rgb(103, 93, 254),
+      rgb(62, 48, 255)
+    )`;
+  } else {
+    submitBtn.style.background = `linear-gradient(
+      135deg,
+      rgb(255, 255, 255),
+      rgb(209, 206, 206),
+      rgb(186, 186, 186)
+    )`;
+  }
+};

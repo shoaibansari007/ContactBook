@@ -12,6 +12,12 @@
     rgb(103, 93, 254),
     rgb(62, 48, 255)
   );
+  --subBtn-bg-gray: linear-gradient(
+    135deg,
+    rgb(255, 255, 255),
+    rgb(209, 206, 206),
+    rgb(186, 186, 186)
+  );
   --box-shadow: 2px 2px 15px 1px rgba(62, 48, 255, 0.2);
   --box-bg: rgba(103, 93, 254, 0.7);
   --overlay--Bg: linear-gradient(
@@ -48,6 +54,7 @@ body {
   right: 30px;
   top: 20px;
   z-index: 5;
+  cursor: pointer;
 }
 .form-container {
   margin: auto;
@@ -69,7 +76,7 @@ body {
 }
 input,
 button {
-  width: 200px;
+  width: 300px;
   height: 40px;
   margin-bottom: 10px;
   border-radius: 10px;
@@ -79,9 +86,15 @@ input {
   border: 2px solid rgb(182, 177, 255);
 }
 button {
-  background: var(--subBtn-bg);
+  background: var(--subBtn-bg-gray);
   border: none;
   color: #fff;
+  cursor: pointer;
+}
+.input-tel::-webkit-outer-spin-button,
+.input-tel::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 button:hover,
 button:visited,
@@ -142,6 +155,7 @@ pre {
 .delete-box {
   float: right;
   margin-top: 5px;
+  cursor: pointer;
 }
 .delete-box:hover {
   scale: 1.08;
@@ -152,6 +166,7 @@ pre {
   top: 20px;
   width: 20px;
   z-index: 5;
+  cursor: pointer;
 }
 .close:hover {
   scale: 1.5;
@@ -175,7 +190,7 @@ pre {
     margin: 0 auto;
   }
   .contact-container {
-    padding-top: 20px;
+    padding-top: 40px;
   }
   .background-img {
     width: 80%;
