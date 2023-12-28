@@ -51,8 +51,8 @@ submitBtn.addEventListener("click", function (e) {
     telValue &&
     emailValue &&
     emailValue.includes("@" && ".") &&
-    telValue.length > 10 &&
-    telValue.length < 15
+    telValue.length >= 10 &&
+    telValue.length <= 15
   ) {
     formBox.classList.add("displayNone");
     contactBox.classList.remove("hidden");
@@ -72,6 +72,14 @@ submitBtn.addEventListener("click", function (e) {
     })
   );
   displayBg();
+
+  // Local Store
+  const obj = {
+    name: nameValue,
+    contact: telValue,
+    email: emailValue,
+  };
+  localStorage.setItem("contactData", JSON.stringify(obj));
 });
 // Close Form------------------------------->
 closeOverlay.addEventListener("click", function (e) {
